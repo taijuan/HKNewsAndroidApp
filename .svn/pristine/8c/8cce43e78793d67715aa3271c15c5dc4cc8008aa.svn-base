@@ -1,0 +1,128 @@
+package com.chinadaily.adapter
+
+import android.arch.lifecycle.Lifecycle
+import android.content.Intent
+import android.graphics.drawable.Drawable
+import android.support.v7.widget.LinearLayoutCompat
+import android.support.v7.widget.RecyclerView
+import android.text.TextUtils
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import com.alibaba.fastjson.JSONObject
+import com.alibaba.fastjson.TypeReference
+import com.bumptech.glide.request.target.SimpleTarget
+import com.bumptech.glide.request.transition.Transition
+import com.chinadaily.R
+import com.chinadaily.activity.WebActivity
+import com.chinadaily.data.CardItem
+import com.chinadaily.http.FastJsonCallback
+import com.chinadaily.http.HttpConstants
+import com.chinadaily.http.httpGet
+import com.chinadaily.utils.DeviceUtils
+import com.chinadaily.utils.GlideApp
+import com.chinadaily.utils.SPUtils
+import kotlinx.android.synthetic.main.adapter_e_paper.view.*
+
+class EPaperAdapter(var lifecycle: Lifecycle) : RecyclerView.Adapter<EPaperHolder>() {
+    private val data: MutableList<CardItem> = mutableListOf()
+
+    fun refreshData(data: List<CardItem>) {
+        this.data.clear()
+        this.data.addAll(data)
+        notifyDataSetChanged()
+    }
+
+    override fun getItemCount(): Int {
+        return data.size
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EPaperHolder {
+        return EPaperHolder(parent, lifecycle)
+    }
+
+    override fun onBindViewHolder(holder: EPaperHolder, position: Int) {
+        holder.refreshData(data[position])
+    }
+}
+
+class EPaperHolder(parent: ViewGroup, lifecycle: Lifecycle) : RecyclerView.ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.adapter_e_paper, parent, false)) {
+    private lateinit var data: CardItem
+    fun refreshData(data: CardItem) {
+        this.data = data
+        param = data.publicationCode + "/" + strFormat(data.pubDate) + "/issue.json"
+        httpGet(fastJsonCallback.also {
+            it.url = "${HttpConstants.E_PAPER_SERVICE}pubs/$param"
+        })
+    }
+
+    private lateinit var param: String
+    private val fastJsonCallback by lazy {
+        object : FastJsonCallback<JSONObject>(lifecycle) {
+            override fun onSuccess(body: JSONObject) {
+                val jsonArray = body.getJSONArray("data")
+                val jsonObject1 = jsonArray.getJSONObject(0)
+                val imgUrl = HttpConstants.E_PAPER_SERVICE + "pubs" + jsonObject1.getString("snapshotBigUrl")
+                SPUtils.put(param, imgUrl)
+                showImage()
+            }
+
+            override fun onError(exception: String) {
+                showImage()
+            }
+        }.apply {
+            clazz = object : TypeReference<JSONObject>() {}
+            pauseBaseRes = false
+        }
+    }
+
+
+    init {
+        val width = DeviceUtils.width() * 2 / 3
+        val height = -1
+        itemView.layoutParams = ViewGroup.LayoutParams(width, height)
+        itemView.setOnClickListener {
+            val url = HttpConstants.E_PAPER_SERVICE + "mobile/index.html?pubCode=" + data.publicationCode + "&pubDate=" + data.pubDate
+            val intent = Intent(it.context, WebActivity::class.java)
+            intent.putExtra("data", url)
+            intent.putExtra("title", "ePaper")
+            it.context.startActivity(intent)
+        }
+    }
+
+    private fun strFormat(date: String): String? {
+        var newDate: String? = null
+        if (date.contains("-")) {
+            newDate = date.replace("-", "/")
+        }
+        return newDate
+    }
+
+    private val target by lazy {
+        object : SimpleTarget<Drawable>() {
+            override fun onResourceReady(resource: Drawable, transition: Transition<in Drawable>?) {
+                itemView.image.setImageDrawable(resource)
+                itemView.image.layoutParams = LinearLayoutCompat.LayoutParams(-1, resource.intrinsicHeight)
+                itemView.name.visibility = View.VISIBLE
+                itemView.name.text = data.publicationName
+                itemView.image.contentDescription = data.publicationName
+            }
+        }
+    }
+
+    private fun showImage() {
+        val url = SPUtils.getString(param, "")
+        if (TextUtils.isEmpty(url)) {
+            return
+        }
+        GlideApp.with(itemView.image).clear(target)
+        val parent = itemView.image.parent as ViewGroup
+        GlideApp.with(itemView.image)
+                .load(url)
+                .placeholder(R.drawable.default_epaper_pic)
+                .error(R.drawable.default_epaper_pic)
+                .fitCenter()
+                .override(parent.measuredWidth, parent.measuredHeight - DeviceUtils.dp2px(36f))
+                .into<SimpleTarget<Drawable>>(target)
+    }
+}

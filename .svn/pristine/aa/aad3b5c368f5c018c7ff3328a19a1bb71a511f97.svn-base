@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.chinadaily.wigdet.W16H9ImageView
+        android:id="@+id/pagerImg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/pagerTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/ijk_transparent_dark"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:lines="2"
+        android:paddingBottom="20dp"
+        android:paddingHorizontal="12dp"
+        android:paddingTop="12dp"
+        android:textColor="@android:color/white"
+        android:textSize="17sp" />
+</FrameLayout>

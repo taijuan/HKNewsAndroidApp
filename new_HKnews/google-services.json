@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "379249490982",
+    "firebase_url": "https://news-d227e.firebaseio.com",
+    "project_id": "news-d227e",
+    "storage_bucket": "news-d227e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:379249490982:android:85dc4cf5f73441a3",
+        "android_client_info": {
+          "package_name": "com.chinadaily"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "379249490982-0vmq9qls0a9gj34n5art310e5tbheq3d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvmWSPb7K9OasT0zLngUjGMUmpy0U7zuw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

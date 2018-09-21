@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f5f5"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="@drawable/statubar_shape"
+        android:gravity="center"
+        android:paddingTop="24dp"
+        android:text="Me"
+        android:textColor="@android:color/white"
+        android:textSize="21sp" />
+
+    <TextView
+        android:id="@+id/favorite"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@android:color/white"
+        android:drawableEnd="@drawable/me_arrow_right"
+        android:drawablePadding="16dp"
+        android:drawableStart="@drawable/me_myfavorites"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp"
+        android:text="@string/my_favorite"
+        android:textColor="#262b2e"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/facebook"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/white"
+        android:drawableEnd="@drawable/me_arrow_right"
+        android:drawablePadding="16dp"
+        android:drawableStart="@drawable/me_facebook"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp"
+        android:text="@string/my_fb"
+        android:textColor="#262b2e"
+        android:textSize="15sp" />
+
+
+    <TextView
+        android:id="@+id/twitter"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="2dp"
+        android:background="@android:color/white"
+        android:drawableEnd="@drawable/me_arrow_right"
+        android:drawablePadding="16dp"
+        android:drawableStart="@drawable/me_twitter"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp"
+        android:text="@string/my_twt"
+        android:textColor="#262b2e"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/feedback"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/white"
+        android:drawableEnd="@drawable/me_arrow_right"
+        android:drawablePadding="16dp"
+        android:drawableStart="@drawable/me_feedback"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp"
+        android:text="@string/my_feed"
+        android:textColor="#262b2e"
+        android:textSize="15sp" />
+
+
+    <TextView
+        android:id="@+id/setting"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="2dp"
+        android:background="@android:color/white"
+        android:drawableEnd="@drawable/me_arrow_right"
+        android:drawablePadding="16dp"
+        android:drawableStart="@drawable/me_settings"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp"
+        android:text="@string/my_setting"
+        android:textColor="#262b2e"
+        android:textSize="15sp" />
+</android.support.v7.widget.LinearLayoutCompat>

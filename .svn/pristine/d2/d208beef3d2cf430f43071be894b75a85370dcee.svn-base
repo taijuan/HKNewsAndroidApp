@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Share</string>
+    <string name="cancel">cancel</string>
+    <string name="share_instagram">Instagram</string>
+    <string name="share_wechat">Wechat</string>
+    <string name="share_wechat_moment">Moments</string>
+    <string name="share_facebook">Facebook</string>
+    <string name="share_twitter">Twitter</string>
+    <string name="share_linked_in">LinkedIn</string>
+    <string name="share_google_plus">Google+</string>
+    <string name="share_wx_toast">No WeChat installed, please download the installation.</string>
+    <string name="share_linked_in_toast">No LinkedIn installed, please download the installation.</string>
+    <string name="share_instagram_toast">No Instagram installed, please download the installation.</string>
+    <string name="share_facebook_toast">No Facebook installed, please download the installation.</string>
+    <string name="share_twitter_toast">No Twitter installed, please download the installation.</string>
+    <string name="share_google_plus_toast">No GooglePlus installed, please download the installation.</string>
+</resources>

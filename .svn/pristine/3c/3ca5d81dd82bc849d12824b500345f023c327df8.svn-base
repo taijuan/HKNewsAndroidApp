@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/statubar_shape"
+        android:clickable="true"
+        android:gravity="center"
+        android:paddingTop="24dp"
+        android:text="Video"
+        android:textColor="@android:color/white"
+        android:textSize="21sp" />
+
+    <include layout="@layout/fragment_news" />
+</android.support.v7.widget.LinearLayoutCompat>

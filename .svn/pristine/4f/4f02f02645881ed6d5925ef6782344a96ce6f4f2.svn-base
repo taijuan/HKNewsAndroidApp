@@ -1,0 +1,18 @@
+package com.chinadaily.update
+
+/**
+ * Created by Staff on 2017/5/19.
+ */
+
+class AppVersion {
+    init {
+
+    }
+
+    var id: String? = null
+    var type: String? = null           // 1强制更新，0非强制更新
+    var version_name: String? = null
+    var version_code: Int = 0   //版本
+    var version_descEn: String? = null  //英文描述
+    var version_path: String? = null    //香港下载地址
+}

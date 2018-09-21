@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0e65d7</color>
+    <color name="colorPrimaryDark">#0e65d7</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="blue_text_color">#004474</color>
+    <color name="app_menu_item_text__color">#B3B3B3</color>
+    <color name="transparent">#00000000</color>
+    <color name="black">#000000</color>
+    <color name="mainpage_color">#038dff</color>
+    <color name="white">#ffffff</color>
+    <color name="main_content_bg">@color/white</color>
+    <color name="main_bottom_text_normal">#494949</color>
+    <color name="news_detail_assist">#888888</color>
+    <color name="gray_bg">#f5f5f5</color>
+    <color name="middle_line">#e7e7e7</color>
+    <color name="dim_foreground_dark">#bebebe</color>
+    <color name="ijk_transparent_dark">#77000000</color>
+    <color name="common_black">#171616</color>
+
+    <color name="color_777777">#FF777777</color>
+    <color name="color_161616">#FF161616</color>
+    <color name="color_d9d9d9">#FFD9D9D9</color>
+    <color name="color_acacac">#FFACACAC</color>
+    <color name="color_009fe8">#FF009FE8</color>
+    <color name="color_2d324f">#FF2D324F</color>
+    <color name="color_eeeeee">#FFEEEEEE</color>
+    <color name="color_f5f5f5">#FFF5F5F5</color>
+    <color name="color_118ce2">#FF118CE2</color>
+    <color name="color_646464">#FF646464</color>
+    <color name="color_32000000">#32000000</color>
+    <color name="color_5ad946">#FF5AD946</color>
+</resources>

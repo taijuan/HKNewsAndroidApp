@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.chinadaily">
+
+    <!-- 友盟分享权限-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+
+    <!-- 获取访问网络权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <!-- 读写存储卡  装载和卸载文件系统 -->
+    <permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--允许访问震动功能  -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- 唤醒 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- 关闭应用程序 -->
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <!-- APP自动删除权限 -->
+    <permission android:name="android.permission.DELETE_PACKAGES" />
+    <!-- 调用相机权限 -->
+    <permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    <application
+        android:name="com.chinadaily.base.BaseApp"
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="05fadb116bb9e5a477bd3464c29ad8687dcb751d" />
+
+        <meta-data
+            android:name="com.taobao.android.hotfix.IDSECRET"
+            android:value="24760441-1" />
+        <meta-data
+            android:name="com.taobao.android.hotfix.APPSECRET"
+            android:value="72fe3cfa886013efabd8fca6aec69a18" />
+        <meta-data
+            android:name="com.taobao.android.hotfix.RSASECRET"
+            android:value="MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCPAPZFOlLkp0GMIxTPxpgjWhF5nJnkZ7/GymVjMpnr6JNkQRCLZK2UVBpVntTt7J2N13allKMfn+pN8ooTTDtqf78vfg2wx3qH8U+B0p4LPjdceqAbhQLNzzswqLRS30M2ROGuF6VwZkopMWJyKGKwAz+1z7/UbxqXeKvR2uVyrISeY5GC0Pa7QYG2UvJsCbiuWFNb7tUDCD3jD0+zqVLTwFlyKf3SekiN9sqtn8rs38tO/e0rkyUyIalraOVL8nV+TinNl4GfiN21WnLNi8f6773QPku7q1tFVfzZD8uD3GFzSwX/BWvKUiD6C9oBfGVivxCXnegXLWgVhRb9X9njAgMBAAECggEBAIbfD2XHVjrVDFsREyXLVd2xqt2ZtwLWXucsKGdgaA848RoSy3nMYHGOyK+L96LWENqgJgSQpTDEcAVIBLWipj8RcM1oA52A5a2lB6mXbPuJmEkeVjbeQgC9vENuOXQXoZpjaL37C0txDey/6Otl73218raU04WVq+zEILjxzIlThW0LbWuTrcnwV1eptkjYPSoigmxBinS9v+S1IH3OpCEH2sdE3w98pE9AZonN7CpL/7tecNyQVv3PkKgv51EoGfPGo0/T/uzMHYFCxDj9mm+rGb6V9+4M/G6H36ZqrI00XQAyh15YHgj4PiXkUh9jmbE5gWnjP0jCZzE2CM75UbECgYEA1JtLjLIth+xLvu6BN9IuCykPYRFLFov7X3PVG1eDDt9qIZoAuW2SJ4/zV5fvOoJdF7/XnKvo/5ZR+lmJsjQ7L4bBx6dIZWR2aKLfuVlRHvhhGxoRVV7gPvIq9hEVQGspfcbmdvtJB33CKhz5rKP/sqMhtCwq6F6JQRjlz/AbPUUCgYEArDDqEY8evA+8bQFihhkjsa+IKdZS1ivNdNoL50MUPa1MSX3jvijNo6XEVrzn4ZFvDY2d07zMv6wAy2RW7jx40/y7OuaWWmUOfQCFDlgENQlToHF5USpig3bPfD9f/rnERGWc2LNWwJa5Eghf+8xYfJ77MXsYCrJhVpOqcYzOyQcCgYB27yEGZi6eWQvOlbHnvkZPq/qUfI4a4NgQf8X5c603Rrgib/pzwN4AD8E7gR0tB/x36rP9SxYe1MKrYCdtb1aksaf5vpT7U4YB5wtsrpB42M3J0X1c2qRr0iFCYjAXR1uApyIJ8WzbKfjSgj8R2vSRxDx4hDTEpQ33Qqxc9J7oWQKBgCX99OdC6Mkdv7ldYNutmE6QKD7y5vwSVha+NXolNsYVAowElsdSQW0mGhf5PkBq0lHvOS+KrLJtxQ8baILQHOjJDpaEYhA30+aIwtLTYLpDAIyZ/OaHr4zKHiWP5iJR4pgkw2KczztXBiaQan0oLS3x9gKI4lkZ2pg7pJPBOa7pAoGAZeZSTsFJg2QuRDnPr/jTRUxOstV8x8Zsf7Db7iWE1gf8lX9RAY7U8uyZZBfqNcdKFMrw50x+8lWHbMQP7hoqasrWaegL/SKPZnR06TCk1VhVizo+tPAEVySDRX6aQ+lvyVZxOkIb2VFOfhEtjurrzSMWy95+DFJqgHen4ooJRVg=" />
+
+
+        <activity
+            android:name="com.chinadaily.activity.WelcomeActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.chinadaily.activity.HomeActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <data
+                    android:host="*"
+                    android:scheme="chinadailyhk" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.chinadaily.activity.SettingActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.chinadaily.activity.PdfViewActivity"
+            android:screenOrientation="portrait" />
+        <!--  用户反馈 -->
+        <activity
+            android:name="com.chinadaily.activity.FeedBackActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.chinadaily.activity.AboutUsActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.chinadaily.activity.CollectionActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.chinadaily.activity.NewsDetailActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.chinadaily.activity.WebActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.chinadaily.activity.VideoMDPlayerDetailsActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+
+        <receiver
+            android:name=".receiver.PushReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTRATION" /> <!--Required  用户注册SDK的intent-->
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" /> <!--Required  用户接收SDK消息的intent-->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" /> <!--Required  用户接收SDK通知栏信息的intent-->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" /> <!--Required  用户打开自定义通知栏的intent-->
+                <action android:name="cn.jpush.android.intent.CONNECTION" /><!-- 接收网络变化 连接/断开 since 1.6.3 -->
+                <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
+                <category android:name="${applicationId}" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>
