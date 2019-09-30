@@ -1,0 +1,57 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+android {
+    compileSdkVersion rootProject.ext.sdk
+
+    defaultConfig {
+        applicationId "com.chinadaily.wear"
+        minSdkVersion 23
+        targetSdkVersion rootProject.ext.sdk
+        versionCode 368
+        versionName "3.6.8"
+    }
+
+    signingConfigs {
+        debug {}
+        release {
+            storeFile file("key")
+            storePassword "123456"
+            keyAlias "wearos"
+            keyPassword "123456"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        android.applicationVariants.all { variant ->
+            variant.outputs.all {
+                outputFileName = "${project.name}-${name}-${defaultConfig.versionName}.apk"
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.google.android.support:wearable:2.4.0'
+    implementation 'com.google.android.gms:play-services-wearable:17.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.wear:wear:1.0.0'
+    //noinspection GradleDependency
+    implementation 'com.alibaba:fastjson:1.1.71.android'
+    implementation 'com.squareup.okhttp3:okhttp:3.14.2'
+    implementation 'com.squareup.okio:okio:2.2.2'
+    implementation('com.lzy.net:okgo:3.0.4')
+    implementation('org.jetbrains.kotlin:kotlin-reflect:1.2.61')
+    implementation("com.github.bumptech.glide:glide:$glide_version")
+    kapt "com.github.bumptech.glide:compiler:$glide_version"
+    implementation "com.github.bumptech.glide:okhttp3-integration:$glide_version"
+    compileOnly 'com.google.android.wearable:wearable:2.4.0'
+}

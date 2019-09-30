@@ -3,7 +3,7 @@ package com.chinadaily.wxapi;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.share.BuildConfig;
 import com.tencent.mm.opensdk.modelbase.BaseReq;

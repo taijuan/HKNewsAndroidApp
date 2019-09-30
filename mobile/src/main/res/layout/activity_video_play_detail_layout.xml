@@ -1,0 +1,107 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/videoContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:divider="@drawable/shape_line"
+        app:showDividers="middle">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/view_super_player_root"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <cn.jzvd.JzvdStd
+                android:id="@+id/view_super_player"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_like"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_weight="1"
+                android:contentDescription="favorite"
+                android:scaleType="fitCenter"
+                android:src="@drawable/favorite" />
+
+            <ImageView
+                android:id="@+id/iv_good"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_weight="1"
+                android:contentDescription="like"
+                android:scaleType="fitCenter"
+                android:src="@drawable/like" />
+
+            <ImageView
+                android:id="@+id/iv_share"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_weight="1"
+                android:contentDescription="share"
+                android:scaleType="fitCenter"
+                android:src="@drawable/share" />
+
+            <FrameLayout
+                android:id="@+id/mediaRouteButtonRoot"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="gone">
+
+                <androidx.mediarouter.app.MediaRouteButton
+                    android:id="@+id/mediaRouteButton"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center" />
+
+                <View
+                    android:id="@+id/mediaRouteButtonClick"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </FrameLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <ProgressBar
+        android:id="@+id/loadingProgressBar"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_gravity="center"
+        android:indeterminateDrawable="@drawable/frame_iphone_loading" />
+
+    <TextView
+        android:id="@+id/loadingRetry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@null"
+        android:drawableTop="@drawable/load_fail"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:text="@string/loading_empty_text"
+        android:textColor="@color/news_detail_assist"
+        android:textSize="17sp"
+        android:visibility="gone" />
+
+</FrameLayout>

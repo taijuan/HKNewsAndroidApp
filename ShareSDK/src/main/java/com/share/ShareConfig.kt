@@ -1,9 +1,6 @@
 package com.share
 
 import android.app.Activity
-import android.arch.lifecycle.Lifecycle
-import android.arch.lifecycle.LifecycleObserver
-import android.arch.lifecycle.OnLifecycleEvent
 import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
@@ -11,10 +8,13 @@ import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Build
 import android.os.Environment
-import android.support.v4.content.FileProvider
-import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.FileProvider
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleObserver
+import androidx.lifecycle.OnLifecycleEvent
 import com.tencent.mm.opensdk.modelmsg.SendMessageToWX
 import com.tencent.mm.opensdk.modelmsg.WXMediaMessage
 import com.tencent.mm.opensdk.modelmsg.WXWebpageObject
@@ -123,22 +123,9 @@ fun AppCompatActivity.share(share_media: SHARE_MEDIA, title: String, description
                     type = "text/plain"
                     putExtra(Intent.EXTRA_TEXT, "$title \n $webUrl")
                     `package` = "com.twitter.android"
-//                    component = android.content.ComponentName("com.twitter.android", "com.twitter.composer.ComposerActivity")
                 })
             } catch (e: Exception) {
                 shareWeb("https://twitter.com/intent/tweet?url=${Uri.encode(webUrl)}")
-            }
-        }
-        SHARE_MEDIA.GOOGLEPLUS -> {
-            try {
-                this.startActivity(Intent("android.intent.action.SEND").apply {
-                    flags = Intent.FLAG_ACTIVITY_NEW_TASK
-                    type = "text/plain"
-                    putExtra(Intent.EXTRA_TEXT, webUrl)
-                    `package` = "com.google.android.apps.plus"
-                })
-            } catch (e: Exception) {
-                shareWeb("https://plus.google.com/share?url=${Uri.encode(webUrl)}")
             }
         }
     }

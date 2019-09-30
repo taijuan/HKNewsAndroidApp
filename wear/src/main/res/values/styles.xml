@@ -1,0 +1,7 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.Wearable">
+        <item name="android:windowBackground">@android:color/white</item>
+    </style>
+
+</resources>

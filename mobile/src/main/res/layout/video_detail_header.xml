@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginTop="16dp"
+    app:cardCornerRadius="4dp">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/headerTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingMultiplier="1.33"
+            android:textColor="#262b2e"
+            android:textSize="17sp"
+            tools:text="Beautiful California Mountains" />
+
+        <TextView
+            android:id="@+id/headerDes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            android:lineSpacingMultiplier="1.2"
+            android:textColor="#b3262b2e"
+            android:textSize="13sp"
+            tools:text="From a career in the sciences to banking that benefits the developing world, Vivek Pathak the Director for East Asia &amp; Pacific of International Financial Corporation shares ." />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="3dp"
+                android:layout_height="13dp"
+                android:layout_gravity="center"
+                android:background="#038dff" />
+
+            <TextView
+                android:id="@+id/headerSubject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="12dp"
+                android:textColor="#038dff"
+                android:textSize="14sp"
+                tools:text="Protected Species" />
+
+            <TextView
+                android:id="@+id/headerTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lineSpacingMultiplier="1.67"
+                android:textColor="#b3262b2e"
+                android:textSize="12sp"
+                tools:text="27 JUNE, 2017 " />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.cardview.widget.CardView>
